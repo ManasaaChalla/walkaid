@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable
+            name="fragment"
+            type="com.example.walkaid.NewHomeFragment" />
+        <import type="android.view.View"/>
+
+    </data>
+    <ScrollView
+
+        android:paddingBottom="48dp"
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:paddingBottom="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".NewHomeFragment">
+
+            <LinearLayout
+                android:id="@+id/statusLayout"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@color/disconnectedColor"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+
+                >
+
+                <TextView
+                    android:id="@+id/connectionStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Disconnected"
+                    android:textColor="@color/textColor" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Home"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/statusLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/musicGenre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/statusLayout"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TextView
+                    android:id="@+id/musicLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:paddingTop="10sp"
+                    android:text="Music Type" />
+
+                <Spinner
+                    android:id="@+id/musicType_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/musicType_list"
+                    app:layout_constraintTop_toBottomOf="@id/musicLabel"></Spinner>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_pace"
+                android:layout_width="0dp"
+                android:paddingVertical="5sp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/musicGenre">
+
+                <TextView
+                    android:id="@+id/pace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0'00''"
+                    android:textSize="50sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pace"
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_cadence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/layout_duration"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_pace">
+
+                <TextView
+                    android:id="@+id/cadence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cadence" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/layout_pace"
+                app:layout_constraintStart_toEndOf="@id/layout_cadence"
+                app:layout_constraintEnd_toStartOf="@id/layout_distance"
+                >
+
+                <TextView
+                    android:id="@+id/duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Duration" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layout_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/layout_duration"
+                app:layout_constraintTop_toBottomOf="@id/layout_pace"
+                >
+
+                <TextView
+                    android:id="@+id/distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    android:id="@+id/distance_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Distance(m)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_steps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                app:layout_constraintTop_toBottomOf="@id/layout_duration"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:orientation="vertical"
+                android:paddingTop="5sp"
+                >
+                <TextView
+                    android:id="@+id/steps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Steps"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/music_controls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_steps"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Playback Speed: "
+                    android:padding="10sp"
+                    />
+                <TextView
+                    android:id="@+id/playback_speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4sp"
+                    android:text="1"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/walk_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="50sp"
+                app:layout_constraintTop_toBottomOf="@id/music_controls"
+                app:layout_constraintStart_toStartOf="parent"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:id="@+id/gif_img"
+                    android:layout_width="300sp"
+                    android:layout_height="150sp"
+                    android:src="@drawable/walking_gif"/>
+            </LinearLayout>
+
+
+
+            <Button
+                android:id="@+id/startStopButton"
+                android:layout_width="180dp"
+                android:layout_height="60dp"
+                android:onClick="@{()->fragment.onClickStart()}"
+                android:text="Start"
+                android:background="@drawable/button_background"
+                android:textColor="@color/textColor"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_marginTop="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/walk_status"/>
+
+            <LinearLayout
+                android:id="@+id/Battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="5sp"
+                app:layout_constraintStart_toStartOf="@id/startStopButton"
+                app:layout_constraintTop_toBottomOf="@id/startStopButton">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Battery:  " />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/leftInsoleBattery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="5sp"
+                app:layout_constraintStart_toEndOf="@id/Battery"
+                app:layout_constraintTop_toBottomOf="@id/startStopButton">
+
+                <TextView
+                    android:id="@+id/leftBattery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Left%  " />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rightInsoleBattery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="5sp"
+                app:layout_constraintStart_toEndOf="@id/leftInsoleBattery"
+                app:layout_constraintTop_toBottomOf="@id/startStopButton">
+
+                <TextView
+                    android:id="@+id/rightBattery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Right%" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

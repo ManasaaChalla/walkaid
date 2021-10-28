@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">walkaid</string>
+
+    <!--running Result-->
+    <string name="default_cadence">0</string>
+    <string name="default_calorie">0</string>
+    <string name="default_distance">0</string>
+    <string name="default_duration">0:00</string>
+    <string name="default_gct">0</string>
+    <string name="default_pace">0\'00\"</string>
+    <string name="default_steps">0</string>
+    <string name="default_time">00:00</string>
+    <string name="duration">Duration</string>
+    <string name="distance">Distance</string>
+    <string name="calorie">Calorie</string>
+    <string name="steps">Steps</string>
+    <string name="running_analysis">Running Analysis</string>
+    <string name="foot_strike">Foot strike</string>
+    <string name="foot_strike_display">Footstrike Display</string>
+    <string name="foot_strike_info_manual_1">There are 3 types of running form depending on foot strike.</string>
+    <string name="foot_strike_info_manual_2"><b><font fgcolor='black'>Midfoot running</font></b> is the most efficient way for jogging and long-distance running.\nFor sprints like 100m, <b><font color='black'>forefoot running</font></b> form is ideal.\n<b><font color='black'>Heel strike</font></b> is only appropriate for walking. If you keep running with heel strike form, this may cause knee pain.</string>
+    <string name="foot_strike2">Footstrike</string>
+    <string name="fore_foot">Forefoot</string>
+    <string name="fore_foot_strike">Forefoot</string>
+    <string name="fore_foot_strike_en">Forefoot</string>
+    <string name="fore_foot_strike_parentheses"></string>
+    <string name="percent_none">- %</string>
+    <string name="mid_foot">Midfoot</string>
+    <string name="heel_foot">Heel</string>
+    <string name="slow">Slow</string>
+    <string name="high">High</string>
+    <string name="short_">Short</string>
+    <string name="pace">Pace</string>
+    <string name="cadence_with_unit">Cadence(spm)</string>
+    <string name="ground_contact_time_with_unit">Ground Contact Time</string>
+    <string name="detail_and_splits">Details and Splits</string>
+    <string name="route">Route</string>
+
+    <string name="running_fast">Fast</string>
+    <string name="running_long">Long</string>
+    <string name="running_normal">Normal</string>
+    <string name="running_short">Short</string>
+    <string name="running_slow">Slow</string>
+
+    <string name="format_percent">%d%%</string>
+
+    <!--Running Section-->
+    <string name="no_section_detail_under_Unit">Information is not shown when you run less than select Unit.</string>
+    <string name="kilometer">kilometer</string>
+    <string name="cadence">Cadence</string>
+    <string name="format_percent2">%s %s%%</string>
+
+    <string name="home">Home</string>
+    <string name="report">Report</string>
+    <string name="user">User</string>
+    <string name="menu">Menu</string>
+
+    <!--    Music Type Dropdown List-->
+    <string-array name="musicType_list">
+        <item>Rock</item>
+        <item>Classical</item>
+        <item>Country</item>
+        <item>Instrumental</item>
+
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="archive">Archive</string>
+
+</resources>

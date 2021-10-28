@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+
+            <variable
+                name="activity"
+                type="com.example.walkaid.ReportFragment" />
+
+
+            <variable
+                name="startDate"
+                type="java.util.Date"/>
+
+            <variable
+                name="id"
+                type="Long"/>
+
+    </data>
+
+    <LinearLayout
+        android:onClick="@{()->activity.moveReport(id)}"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="5dp">
+
+            <LinearLayout
+                android:weightSum="3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/txt_item_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:text="@{id.toString()}"
+                    />
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="1"-->
+<!--                    android:textColor="@color/darktextColor"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:id="@+id/report_text" />-->
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="21 Sept 2021,09:40 PM"-->
+<!--                    android:textColor="@color/darktextColor"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:id="@+id/report_text" />-->
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{startDate.toLocaleString()}"
+                    android:layout_gravity="center"
+
+                    />
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/delete_report"
+                    android:onClick="@{()->activity.deleteRunning(id)}"
+                    android:src="@drawable/ic_delete_24" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>
